@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1€.Brand</title>
+    <link rel="stylesheet" href="FeuilleDeStyle.css">
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="VideoArrierePlan.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="title-with-logo">
+            <img src="Logo.png" alt="Logo" class="logo" id="mainLogo">
+            <h1>1€.Brand</h1>
+        </div>
+        <h2>Découvrir les articles et les moyens de paiement</h2>
+        <a href="#" class="button" id="hoverButton">Accéder à la boutique</a>
+    </div>
+    
+    <!-- Carré de transition -->
+    <div class="transition-overlay" id="transitionOverlay"></div>
+    
+    <script>
+        const logo = document.getElementById('mainLogo');
+        const button = document.getElementById('hoverButton');
+        const transitionOverlay = document.getElementById('transitionOverlay');
+        
+        button.addEventListener('mouseenter', function() {
+            logo.src = 'PinkLogo.png';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            logo.src = 'Logo.png';
+        });
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            transitionOverlay.classList.add('active');
+            
+
+            setTimeout(function() {
+                window.location.href = 'Pages/Main1.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
